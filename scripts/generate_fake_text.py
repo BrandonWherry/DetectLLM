@@ -25,7 +25,7 @@ def wrap_text(text, width=MAX_WIDTH, color=None):
 
 while True:
     # Use rich to print the User's prompt in blue
-    console.print("[blue]USER: [/blue]", end="")
+    console.print("[blue]SEED: [/blue]", end="")
     user_input = input()
     
     # Exit condition if user types 'exit'
@@ -42,7 +42,7 @@ while True:
 
     output_text = user_input + ' ' + completion['choices'][0]['text'].strip()
 
-    ai_response = wrap_text(output_text, color="green")
+    ai_response = wrap_text(output_text.replace(user_input, '').strip(), color="green")
     print(f"[red]AILA:[/red] {ai_response}")
 
 print("[yellow]Goodbye![/yellow]")
