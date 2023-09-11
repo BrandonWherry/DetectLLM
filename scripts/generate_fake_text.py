@@ -42,7 +42,7 @@ while True:
 
     output_text = user_input + ' ' + completion['choices'][0]['text'].strip()
 
-    ai_response = wrap_text(output_text.replace(user_input, '').strip(), color="green")
+    ai_response = wrap_text(output_text.strip(), color="green")
     print(f"[red]AILA:[/red] {ai_response}")
 
 print("[yellow]Goodbye![/yellow]")
